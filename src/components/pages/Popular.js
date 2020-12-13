@@ -12,28 +12,17 @@ export default function Popular() {
 
 
     const mangaFunction = async () => {
-        // try {
-        //     await Axios
-        //         .get(URL)
-        //         .then(res => {
-        //             setPopularMangaList(res.data.manga_list)
-        //         })
-        //     setLoading(true);
-        // } catch (e) {
-        //     console.log('error: ', e);
-        // }
-        // //
-        Axios.get(URL)
-            .then(result => {
-                const responseAPI = result.data.manga_list;
-                setPopularMangaList(responseAPI);
-                setLoading(true);
-            })
-            .catch(err => {
-                console.log('error: ', err);
-            });
+        try {
+            await Axios
+                .get(URL)
+                .then(res => {
+                    setPopularMangaList(res.data.manga_list)
+                })
+            setLoading(true);
+        } catch (err) {
+            console.log('error: ', err);
+        }
     }
-
 
     useEffect(() => {
         mangaFunction();
