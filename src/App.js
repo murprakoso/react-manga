@@ -1,23 +1,23 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Home from './components/pages/Home';
+import Popular from './components/pages/Popular';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/popular" component={Popular} />
+        </Switch>
+      </div>
+      <Footer />
+    </>
   );
 }
 

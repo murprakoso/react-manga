@@ -2,6 +2,14 @@
   margin: 0px;
 }
 
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.content__wrapper {
+  min-height: 80vh;
+}
+
 .App {
   text-align: center;
 }
