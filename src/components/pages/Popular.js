@@ -40,7 +40,7 @@ export default function Popular() {
                         title={manga.title}
                         thumb={manga.thumb}
                         type={manga.type}
-                        update_on={manga.updated_on}
+                        upload_on={manga.upload_on}
                         chapter={manga.chapter}
                     />
                 }) :

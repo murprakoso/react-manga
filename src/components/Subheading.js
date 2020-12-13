@@ -5,7 +5,7 @@ export default function Subheading({ title, titleActive }) {
     return (
         <div>
             <h1 className="mt-4 mb-3">
-                <small>{title}</small>
+                <small className="subheading">{title}</small>
             </h1>
             <ol className="breadcrumb">
                 <li className="breadcrumb-item">

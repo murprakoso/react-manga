@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Card(props) {
 
     // descructering
-    const { title, thumb, type, update_on, endpoint, chapter } = props;
+    const { title, thumb, type, update_on, upload_on, endpoint, chapter } = props;
 
     const badge = type === 'Manga' ? 'badge-danger' : type === 'Manhua' ? 'badge-success' : 'badge-info';
 
@@ -16,7 +16,7 @@ export default function Card(props) {
                 </Link>
                 <div className="card-body">
                     <span className={'badge mr-2 ' + badge}>{type}</span>
-                    <small>Terakhir diupdate: {update_on}</small><br />
+                    <small>{update_on ? 'Terakhir diupdate: ' + update_on : null || upload_on ? upload_on : null} </small><br />
                     <strong className="card-title font-weight-bold">
                         <Link to={"/manga/detail/" + endpoint} className="text-dark">{title}</Link>
                     </strong>

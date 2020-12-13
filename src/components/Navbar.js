@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
+
+    // const [searchManga, setSearchManga] = useState([]);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
@@ -18,10 +21,10 @@ export default function Navbar() {
                             <Link to="/popular" className="nav-link">Populer</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">Rekomendasi</Link>
+                            <Link to="/recommended" className="nav-link">Rekomendasi</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">Genre</Link>
+                            <Link to="/genres" className="nav-link">Genre</Link>
                         </li>
                         <li className="nav-item dropdown">
                             <Link to="#" className="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">List</Link>
@@ -32,6 +35,7 @@ export default function Navbar() {
                             </div>
                         </li>
                     </ul>
+
                     <form className="form-inline my-2 my-lg-0">
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
