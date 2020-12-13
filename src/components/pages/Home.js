@@ -26,7 +26,7 @@ export default function Home() {
     return (
         <>
             <div className="content__wrapper">
-                <Subheading title="Title" />
+                <Subheading title="" />
                 <div className="row py-4">
                     {mangaList.map(manga => {
                         return <Card

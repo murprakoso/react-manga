@@ -6,10 +6,10 @@ export default function Card(props) {
     // descructering
     const { title, thumb, type, update_on, endpoint, chapter } = props;
 
-    const badge = type == 'Manga' ? 'badge-danger' : type == 'Manhua' ? 'badge-success' : 'badge-info';
+    const badge = type === 'Manga' ? 'badge-danger' : type === 'Manhua' ? 'badge-success' : 'badge-info';
 
     return (
-        <div className="col-lg-3 col-sm-6 portfolio-item">
+        <div className="col-lg-3 col-sm-4 col-6 portfolio-item">
             <div className="card h-100">
                 <Link to={"/manga/detail/" + endpoint}>
                     <img className="card-img-top" src={thumb ? thumb : 'http://placehold.it/700x400'} alt="CardImage" />
