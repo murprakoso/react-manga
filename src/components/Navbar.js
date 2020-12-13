@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 export default function Navbar() {
-
-    // const [searchManga, setSearchManga] = useState([]);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,10 +35,7 @@ export default function Navbar() {
                         </li>
                     </ul>
 
-                    <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    <Search />
                 </div>
             </div>
         </nav>

@@ -22,7 +22,7 @@ function App() {
           <Route path="/genres/:slug" component={GenreList} />
           <Route path="/recommended" component={Recommended} />
 
-          <Route path="/manga/detail/:endpoint" component={DetailManga} />
+          <Route path="/manga/detail/:slug" component={DetailManga} />
 
           {/*  */}
           <Route component={NotFound} />
