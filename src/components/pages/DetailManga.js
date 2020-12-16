@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import Subheading from '../Subheading';
 import Content from '../Content';
 import Loader from '../Loader';
 import Axios from 'axios';
+import { Failed } from '../Failed';
 
 export default function DetailManga(props) {
 
-    // console.log(props.match.params.slug);
     const slug = props.match.params.slug;
-    const URL = `http://localhost:8080/api/manga/detail/${slug}`;
+    // const URL = `http://localhost:8080/api/manga/detail/${slug}`;
 
     const [mangaDetail, setMangaDetail] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        Axios.get(URL)
-            .then(result => {
-                console.log('data API: ', result.data);
-                const responseAPI = result.data;
-                setMangaDetail(responseAPI);
-                setLoading(true);
-            })
-            .catch(err => {
-                console.log('error: ', err);
-                <Redirect to="/" />
-            })
-    }, [URL])
+        const timeout = setTimeout(() => {
+            Axios.get(`http://localhost:8080/api/manga/detail/${slug}`)
+                .then(result => {
+                    console.log('data API: ', result.data);
+                    const responseAPI = result.data;
+                    setMangaDetail(responseAPI);
+                    setLoading(true);
+                })
+        }, 2000);
+        return () => clearTimeout(timeout);
+    }, [slug])
 
 
     return (
@@ -47,7 +46,9 @@ export default function DetailManga(props) {
                             chapters={mangaDetail.chapter}
                         />
                         :
-                        <Loader />
+                        mangaDetail.title === null ? <Failed />
+                            :
+                            <Loader />
                     }
                 </div>
                 <hr />

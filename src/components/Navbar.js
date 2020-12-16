@@ -28,13 +28,19 @@ export default function Navbar() {
                         <li className="nav-item dropdown">
                             <Link to="#" className="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">List</Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <Link to="/" className="dropdown-item">Manga</Link>
-                                <Link to="/" className="dropdown-item">Manhua</Link>
-                                <Link to="/" className="dropdown-item">Manhwa</Link>
+                                <Link to="/manga" className="dropdown-item">Manga</Link>
+                                <Link to="/manhua" className="dropdown-item">Manhua</Link>
+                                <Link to="/manhwa" className="dropdown-item">Manhwa</Link>
                             </div>
                         </li>
                     </ul>
 
+                    <div className="custom-control custom-switch mr-2">
+                        <input type="checkbox" className="custom-control-input" id="customSwitch1" defaultChecked />
+                        <label className="custom-control-label" htmlFor="customSwitch1"></label>
+                    </div>
+
+                    {/* SEARCH */}
                     <Search />
                 </div>
             </div>

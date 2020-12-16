@@ -1,26 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Button } from 'react-bootstrap';
 
-export default function Pagination() {
+const Pagination = ({ title, ...res }) => {
+
+    const prev = '« Sebelumnya';
+    const next = 'Selanjutnya »';
+
     return (
-        <nav aria-label="Page navigation example">
-            <ul className="pagination justify-content-center">
-                <li className="page-item">
-                    <Link to="/" className="page-link">Prev</Link>
-                </li>
-                <li className="page-item">
-                    <Link to="/" className="page-link">1</Link>
-                </li>
-                <li className="page-item">
-                    <Link to="/" className="page-link">2</Link>
-                </li>
-                <li className="page-item">
-                    <Link to="/" className="page-link">3</Link>
-                </li>
-                <li className="page-item">
-                    <Link to="/" className="page-link">Next</Link>
-                </li>
-            </ul>
-        </nav>
+        <button {...res}>{title === 'next' ? next : title === 'prev' ? prev : null}</button>
     )
 }
+
+export default Pagination;
+

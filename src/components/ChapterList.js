@@ -11,7 +11,7 @@ export default function ChapterList(props) {
         // </div>
         <tr>
             <th scope="row" className="col-12">
-                <Link to={slug}>{title}</Link>
+                <Link to={'/chapter/' + slug}>{title}</Link>
             </th>
         </tr>
     )

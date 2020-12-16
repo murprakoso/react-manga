@@ -8,7 +8,7 @@ export default function ButtonGenre(props) {
 
     return (
         <div className="col-lg-3 col-sm-4 col-6 btn__genre">
-            <Link to={"/genres/" + endpoint} className="btn btn-outline-secondary btn-block">
+            <Link to={"/genres/" + endpoint} className="btn btn-light btn-block">
                 {genre_name ? genre_name : 'genre'}
             </Link>
         </div>
