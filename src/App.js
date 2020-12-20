@@ -21,7 +21,6 @@ function App() {
       <div className="container">
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/manga/page/:page" component={Home} />
 
           <Route path="/popular" component={Popular} />
           <Route path="/genres" exact component={Genre} />
@@ -32,8 +31,8 @@ function App() {
           <Route path="/detail/:slug" component={DetailManga} />
 
           {/* List */}
-          <Route path="/manga" component={Manga} />
-          {/* <Route path="/manga/page/:page" component={Manga} /> */}
+          <Route path="/manga" exact component={Manga} />
+          <Route path="/manga/page/:page" component={Manga} />
 
           <Route path="/manhua" component={Manhua} />
           <Route path="/manhwa" component={Manhwa} />
